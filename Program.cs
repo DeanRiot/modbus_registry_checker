@@ -217,10 +217,10 @@ namespace RegChecker
 
             if (saveToFile)
             {
-
                 var fileName = DateTime.Now.ToString();
-                Console.WriteLine($"Saving Data To File {fileName.Replace(" ","_")}");
-                using (StreamWriter sw = new StreamWriter(Path.GetFullPath($"reports/{fileName}.txt")))
+                fileName = fileName.Replace(" ", "_").Replace(":", "_").Replace(".", "_");
+                Console.WriteLine($"Saving Data To File  {fileName}");
+                using (StreamWriter sw = new StreamWriter(Path.GetFullPath($"{fileName}.txt")))
                 {
                     foreach (string repotrString in result)
                     {
